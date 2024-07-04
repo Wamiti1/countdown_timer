@@ -19,10 +19,10 @@ class Results extends StatelessWidget {
         child: TimerCountdown(
           endTime: DateTime.now().add(
            Duration(
-            days: duration['days']!,
-            hours: duration['hours']!,
-            minutes: duration['minutes']!,
-            seconds: duration['seconds']!,
+            days: duration['days'] ?? 0,
+            hours: duration['hours'] ?? 0,
+            minutes: duration['minutes'] ?? 0,
+            seconds: duration['seconds'] ?? 0,
           ),
         ),
         onEnd: (){
