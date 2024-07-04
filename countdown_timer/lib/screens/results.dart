@@ -2,7 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_timer_countdown/flutter_timer_countdown.dart';
 
 class Results extends StatelessWidget {
-  const Results({super.key});
+  const Results({super.key,
+  required this.duration
+  });
+
+  final Map<String,int> duration;
 
   @override
   Widget build(BuildContext context) {
@@ -14,11 +18,11 @@ class Results extends StatelessWidget {
       body: Center(
         child: TimerCountdown(
           endTime: DateTime.now().add(
-          const Duration(
-            days: 0,
-            hours: 0,
-            minutes: 1,
-            seconds: 0,
+           Duration(
+            days: duration['days']!,
+            hours: duration['hours']!,
+            minutes: duration['minutes']!,
+            seconds: duration['seconds']!,
           ),
         ),
         onEnd: (){
